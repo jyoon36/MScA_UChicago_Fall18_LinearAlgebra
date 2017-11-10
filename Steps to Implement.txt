@@ -1,0 +1,20 @@
+STEP1 : BEST MODEL TO PREDICT 15 KEYPOINTS
+1. Modify number of hidden layers and nodes at each layer and create new models
+2. Predict using the model
+3. Calculate RMSE
+4. Determine the best model to use
+
+STEP2: CREATE ANOTHER VECTOR OF MEANINGFUL DISTANCES
+1. Difference between the keypoints (x,y) eg. Dstance between 2 eyes, dist b/w right eye and nose, dist b/w left eye and nose, etc..
+
+STEP3: CREATE TRAINING DATA FOR CLASSIFICATION
+1. Take 100 (sample) pics of a person
+2. Get 100 Meaningful distances vector
+3. Average the values and store a single vector and label for the person
+4. Repeat for 10 people
+
+STEP4: CREATE A CLASSIFIER USING COSINE SIMILARITY
+1. Input a new image
+2. It should create a Meaningful distances vector as in STEP2
+3. Perform cosine similarity with the above 10 vectors from STEP3
+4. Use the label of the maximum value of match and display that as the name
